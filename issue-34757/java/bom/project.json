@@ -1,0 +1,9 @@
+{
+  "implicitDependencies": [
+    "org.example:lib-1",
+    "org.example:lib-2",
+    "org.example:lib-3",
+    "org.example:lib-4",
+    "org.example:app"
+  ]
+}

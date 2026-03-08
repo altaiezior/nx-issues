@@ -1,0 +1,5 @@
+{
+  "implicitDependencies": [
+    "org.example:graal"
+  ]
+}
