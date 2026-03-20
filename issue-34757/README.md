@@ -2,16 +2,16 @@
 
 https://github.com/nrwl/nx/issues/34758
 
-This repository demonstrates an issue with the `@nx/maven` plugin when using `mise clean` (which triggers
+This repository demonstrates an issue with the `@nx/maven` plugin when using `mise reset` (which triggers
 `nx run-many -t mvn-clean`) in a complex project structure with multiple Maven modules.
 
 ## Issue Description
 
 In this project, `mise build` works correctly because `nx` respects the dependencies between projects when building.
-However, `mise clean` hangs and leaks logs when the number of projects exceeds the system's parallelism (available CPU
+However, `mise reset` hangs and leaks logs when the number of projects exceeds the system's parallelism (available CPU
 cores).
 
-This occurs because the `clean` targets for different Maven projects are triggered simultaneously in parallel. Even
+This occurs because the `mvn-clean` targets for different Maven projects are triggered simultaneously in parallel. Even
 though they are "independent" clean targets, they may still have inter-dependencies (e.g., parent-child relationships,
 `bom` dependencies) that cause conflicts or deadlocks when run in parallel without proper ordering, especially when the
 task queue exceeds the available execution slots.
@@ -39,9 +39,9 @@ The project uses `mise` to manage tools (Java, Maven, Node, Nx) and define commo
    ```
    This runs `nx run-many -t mvn-install`. It should work fine as dependencies are correctly set up and followed.
 
-2. **Clean the project:**
+2. **Reset the project:**
    ```bash
-   mise clean
+   mise reset
    ```
    This runs `nx run-many -t mvn-clean`.
 
