@@ -1,15 +1,18 @@
 ## Issue 34539
 
 https://github.com/nrwl/nx/issues/34539
+https://github.com/nrwl/nx/issues/34478
+https://github.com/nrwl/nx/issues/34038
 
 ### Issues
 
 1. **maven.config is not parsed by maven 3 using nx**
    The property `--color=never` is set in `.mvn/maven.config`, but the output still uses colors. While `mvn clean`
-   respects this property when run directly, Nx does not seem to pass it to the batch executor even when running
-   `nx run-many -t clean -- --color=never`.
+   respects this property when run directly.
 
-2. **Internal logs are leaking**
+2. Nx does not seem to pass it to the batch executor even when running `nx run-many -t clean -- --color=never`.
+
+3. **Internal logs are leaking**
    Internal logs are leaking when using the `clean` command.
 
    ```text
