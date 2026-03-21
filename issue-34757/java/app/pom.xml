@@ -30,17 +30,8 @@
                     <artifactSet>
                         <includes>
                             <include>io.grpc:grpc-xds</include>
-                            <include>net.media.grpc</include>
                         </includes>
                     </artifactSet>
-                    <filters>
-                        <filter>
-                            <artifact>net.media.grpc</artifact>
-                            <excludes>
-                                <exclude>META-INF/*.MF</exclude>
-                            </excludes>
-                        </filter>
-                    </filters>
                 </configuration>
             </plugin>
         </plugins>
