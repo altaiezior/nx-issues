@@ -1,0 +1,19 @@
+[tools]
+java = "temurin-25.0.2+10.0.LTS"
+node = "24.14.0"
+
+[plugins]
+maven = 'https://github.com/mise-plugins/mise-maven'
+
+[hooks]
+postinstall = "pnpm install"
+
+[env]
+NX_DEFAULT_OUTPUT_STYLE = 'stream-without-prefixes'
+NX_BATCH_MODE = 'true'
+
+[settings]
+experimental = true
+
+[settings.node]
+corepack = true

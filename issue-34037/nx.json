@@ -1,10 +1,4 @@
 {
-  "installation": {
-    "version": "22.4.0-beta.1",
-    "plugins": {
-      "@nx/maven": "22.4.0-beta.1"
-    }
-  },
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "plugins": [
     "@nx/maven"
