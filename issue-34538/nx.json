@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "plugins": [
+    {
+      "plugin": "@nx/maven",
+      "options": {
+        "verbose": false,
+        "targetNamePrefix": "mvn-"
+      }
+    }
+  ],
+  "analytics": false
+}
