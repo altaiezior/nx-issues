@@ -80,6 +80,18 @@ importers:
         specifier: 22.5.4
         version: 22.5.4
 
+  issue-34945:
+    devDependencies:
+      '@nx/maven':
+        specifier: 22.6.1
+        version: 22.6.1(nx@22.6.1)
+      '@nx/plugin':
+        specifier: 22.6.1
+        version: 22.6.1(@babel/traverse@7.29.0)(@types/node@25.5.0)(@zkochan/js-yaml@0.0.7)(babel-plugin-macros@3.1.0)(eslint@10.1.0)(nx@22.6.1)(typescript@5.9.3)
+      nx:
+        specifier: 22.6.1
+        version: 22.6.1
+
 packages:
 
   '@babel/code-frame@7.29.0':

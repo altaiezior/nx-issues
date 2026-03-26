@@ -1,0 +1,46 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "defaultBase": "master",
+  "namedInputs": {
+    "protos": [
+      "{projectRoot}/**/*.proto"
+    ]
+  },
+  "targetDefaults": {
+    "buf:generate:java": {
+      "executor": "nx:run-commands",
+      "inputs": [
+        "{workspaceRoot}/proto/buf.yaml",
+        "{workspaceRoot}/proto/buf.gen.java.yaml",
+        "^protos"
+      ],
+      "outputs": [
+        "{projectRoot}/target/generated-sources/protobuf"
+      ],
+      "cache": true,
+      "options": {
+        "command": "buf generate",
+        "template": "buf.gen.java.yaml",
+        "output": "../{projectRoot}",
+        "cwd": "proto"
+      }
+    },
+    "mvn-sources": {
+      "dependsOn": [
+        "^mvn-install",
+        "buf:generate:java",
+        "mvn-before:sources"
+      ]
+    }
+  },
+  "plugins": [
+    {
+      "plugin": "@nx/maven",
+      "options": {
+        "verbose": false,
+        "targetNamePrefix": "mvn-"
+      }
+    }
+  ],
+  "analytics": false
+}

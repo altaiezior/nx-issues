@@ -1,0 +1,19 @@
+version: v2
+
+lint:
+  use:
+  - STANDARD
+  except:
+  - PACKAGE_VERSION_SUFFIX
+  - RPC_REQUEST_RESPONSE_UNIQUE
+  ignore:
+  - proto/**/test/**
+  rpc_allow_same_request_response: true
+  rpc_allow_google_protobuf_empty_requests: true
+  rpc_allow_google_protobuf_empty_responses: true
+
+breaking:
+  use:
+  - FILE
+  ignore:
+  - proto/**/test/**

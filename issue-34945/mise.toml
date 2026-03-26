@@ -1,0 +1,16 @@
+[tools]
+maven = "4.0.0-rc-5"
+"aqua:protocolbuffers/protobuf/protoc" = "34.1"
+"aqua:bufbuild/buf" = "1.66.1"
+
+[tasks.reset]
+run = [
+    "mvn clean",
+    "nx reset"
+]
+
+[tasks."build"]
+run = "nx run-many -t build"
+
+[env]
+_.path = ['{{config_root}}/node_modules/.bin']

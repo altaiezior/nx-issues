@@ -1,0 +1,9 @@
+{
+  "name": "java/grpc-services",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "dependsOn": ["mvn-install"]
+    }
+  }
+}

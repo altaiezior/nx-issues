@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package orcametrics;
+
+option java_multiple_files = true;
+option java_package = "org.example.orcametrics";
+
+enum Status {
+  STATUS_UNSPECIFIED = 0;
+  STATUS_RUNNING = 1;
+  STATUS_PAUSED = 2;
+}
